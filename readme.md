@@ -12,6 +12,7 @@ Pre-requisite:
 ### CLASS
 Define a class with "class" key word and the name of the class  starts with capital letter(Pascalcase).
 
+```
 class Car{
     
     #define the class here
@@ -19,23 +20,23 @@ class Car{
 
  <!-- Check type of the newly created class -->
 console.log(typeof Car);    
- <!--------returns function----->
-
+ <!-- ------returns function--- -->
+```
 ### INSTANCE OF A CLASS
 Create an instance of the class with "new" key word.
 
 let car1= new Car();
-<!--Check type of the newly created instance -->
+<!---Check type of the newly created instance -->
 console.log(typeof car1);  
-<!---------returns  object----->
-<!--Checking the newly created object is an instance of the above class -->
+<!---returns  object -->
+<!---Checking the newly created object is an instance of the above class -->
 console.log(car1 instanceof Car) ;
-<!-------returns true ---------->
+<!---returns true ---------->
 
 ## CONSTRUCTOR
 It is defined inside the class using keyword "constructor". Constructor is used to initialize information for class instance(object).It is automatically executated during instance creation. It is a function that can take information through arguments.
 
-
+```
 class Car {
     contructor(id,name){
         console.log("inside Car constructor")
@@ -44,7 +45,7 @@ class Car {
 }
  
 let car1= new Car("123","Honda");
-
+```
 ### PROPERTIES
 Define instance properties using "this" keyword inside  costructor , this will  help to attach these variables to the instance.
 
@@ -273,8 +274,8 @@ let bus= new Bus();
 Bus.manufacturer();
  <!-- bus.manufacturer(); give error -->
  ### CODE ARRANGEMENT/FOLDER STRUCTURE (IMPORT AND EXPORT of classes)
-<!-- The general hierarchy of files is as follows -->
-<!-- we can seperate the classes from our inheritanceSinglefile.js file and arrange them as follows  -->
+The general hierarchy of files is as follows -->
+we can seperate the classes from our inheritanceSinglefile.js file and arrange them as follows 
 -src
     -class
         -Vehicle.js
@@ -284,6 +285,5 @@ Bus.manufacturer();
 index.html
 package.json
 
-<!-- "export" keyword is used to export all the classes to app.js and "import" keyword is used to import the parent classes in other child classes as well as app.js -->
-<!-- add  type="module" in index.html where app.js is called to avoid ERROR:"module cannt be imported outside module(e.g.<script type="module" src="src/app.js"></script>)
- -->
+"export" keyword is used to export all the classes to app.js and "import" keyword is used to import the parent classes in other child classes as well as app.js -->
+ add  type="module" in index.html where app.js is called to avoid ERROR:"module cannt be imported outside module(e.g.<script type="module" src="src/app.js"></script>)
