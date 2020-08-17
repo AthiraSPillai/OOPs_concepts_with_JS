@@ -8,9 +8,9 @@ Pre-requisite:
 6) Edit package.json under "script " and add the following     "dev":"lite-server"
 
 
-# ------------- Refer File: classSinglefile.js ----#
-# ------------ CLASS----------------------------//
-# CLASS -Define a class with "class" key word and the name of the class  Starts with Capital letter(Pascalcase)
+## Refer File: src/classSinglefile.js 
+## CLASS
+### CLASS -Define a class with "class" key word and the name of the class  Starts with Capital letter(Pascalcase)
 class Car{
     #define the class here
 }
@@ -19,8 +19,8 @@ class Car{
 console.log(typeof Car);    
  <!--------returns function----->
 
-# ----------- INSTANCE--------------------------//
-## INSTANCE- Create an instance of the class with "new" key word
+## INSTANCE
+### INSTANCE- Create an instance of the class with "new" key word
 let car1= new Car();
 
 ### Check type of the newly created instance
@@ -31,8 +31,8 @@ console.log(typeof car1);
 console.log(car1 instanceof Car) ;
 <!-------returns true ---------->
 
-# ----------- CONSTRUCTOR----------------------//
-## CONSTRUCTOR- is defined inside class using keyword "constructor". Constructor is used to initialize information for class instance(object).It is automatically executated during instance creation. It is a function that can take information through arguments
+##CONSTRUCTOR
+### CONSTRUCTOR- is defined inside class using keyword "constructor". Constructor is used to initialize information for class instance(object).It is automatically executated during instance creation. It is a function that can take information through arguments
 class Car {
 
     contructor(id,name){
@@ -46,8 +46,8 @@ class Car {
  
 let car1= new Car("123","Honda");
 
-# ------------ PROPERTIES------------------------//
-## PROPERTIES- Define instance properties using "this" keyword inside  costructor , this will  help to attach these variables to the instance
+## PROPERTIES
+### PROPERTIES- Define instance properties using "this" keyword inside  costructor , this will  help to attach these variables to the instance
 class Car {
 
 
@@ -67,9 +67,8 @@ let car1= new Car("123","Honda")
 console.log("car1: " + car1.id, car1.name) ;
 
 
-# ------------ STATIC PROPERTY or CLASS PROPERTY---------//
-## STATIC PROPERTY or CLASS PROPERTY
-The properties that are  defind directly under the class  called Static Property or Class property. Its not accessible to the instances but belongs only to Class 
+# STATIC PROPERTY or CLASS PROPERTY
+### The properties that are  defind directly under the class  called Static Property or Class property. Its not accessible to the instances but belongs only to Class 
 
 class Car {
 
@@ -109,16 +108,16 @@ constructor(id,name){
 
 }
 
-# ------------ METHODS------------------------//
-## METHODS-Functions belongs to an instance (accessible to instace)
+## METHODS
+### METHODS-Functions belongs to an instance (accessible to instace)
     drive(){
         console.log('Inside the drive method: '+ this.id + this.name)
     
     }
 
 
-# ------------STATIC METHODS------------------//
-## STATIC METHODS is defined by "static" key word (accessible to class only)
+## STATIC METHODS
+### STATIC METHODS is defined by "static" key word (accessible to class only)
     static driveFast(){
         console.log("Inside the driveFast method and print static property: "+ this.maxSpeed)
         console.log("Cannot access instance property in static method "+ this.id +" so will return undefined")
@@ -131,9 +130,9 @@ Car.driveFast();
 car1.driveFast();
 <!-----it will return undefined ----->
 
-# ----------GETTERS and SETTERS-----------------//
-#### Setter- It looks like a function but can be used set value for a property variable.Uses "set" keyword to define setter function. Takes  parameters and assigns to property variable
-#### Getter-Function is used to return the value set by the setter function
+## GETTERS and SETTERS
+### Setter- It looks like a function but can be used set value for a property variable.Uses "set" keyword to define setter function. Takes  parameters and assigns to property variable
+### Getter-Function is used to return the value set by the setter function
 
 class Car {
     constructor(id,name){
@@ -157,17 +156,17 @@ class Car {
 car1.place="Newyork"
 console.log("car1: "+ car1.id,car1.name, car1.place)
 
-# ------------- Refer File: inheitanceSinglefile.js ----#
-# ----------INHERITANCE---------------------------//
+## Refer File: src/inheitanceSinglefile.js 
+## INHERITANCE
 
 ### "extend" keyword is used to show a class is inherits from a parent class. All class in javascript inherits from "Object Class"
 
-## Parent Class
+<!--  Parent Class -->
 class Vehicle{ 
 
 }
 
-## Truck and Bus Inherits from the Parent class called Vehicle
+ <!-- Truck and Bus Inherits from the Parent class called Vehicle -->
 class Truck extends Vehicle{
 
 }
@@ -177,18 +176,18 @@ class Bus extends Vehicle{
 
 }
 
-### Create an instance of the Truck class
+<!--  Create an instance of the Truck class -->
 let truck1=new Truck();
 
-#### Every class in javascript inherits from Object class (kind of super parent class)
-### An instance (i.e. truck1) of a class(i.e. Truck) will also be an  instance of parent class(i.e. Vehicle) that it inherits from as well as an instance of Object Class. 
+<!-- Every class in javascript inherits from Object class (kind of super parent class) -->
+ <!-- An instance (i.e. truck1) of a class(i.e. Truck) will also be an  instance of parent class(i.e. Vehicle) that it inherits from as well as an instance of Object Class.  -->
 
 console.log(truck1 instanceof Truck);
 console.log(truck1 instanceof Vehicle);
 console.log(truck1 instanceof  Object);
 
 
-# ----------INHERITING CONSTRUCTOR--------------------------//
+## INHERITING CONSTRUCTOR
 
 ### Define Constructor in child class- need to execute the constructor in parent class before executing child class's constructor. It is done by calling the function "super()". Even if there is no constructor defined in parent class, javascript will add one by default so need to use super() in all the child class's constructor.
 
@@ -209,7 +208,7 @@ class Truck extends Vehicle{
 
 }
 
-# ----------INHERITING PROPERTIES---------------------------//
+## INHERITING PROPERTIES
 ### For  properties that are common for all the child classes, we can set it at parent level and can be accessed by all the child classes thar are inherited from parent class.
 
 
@@ -235,7 +234,7 @@ class Bus extends Vehicle{
 let bus= new Bus("123")
 console.log(bus.regNumber);
 
-## -------OVERRIDING PROPERTIES--------------------------##
+## OVERRIDING PROPERTIES
 ### The property values set at parent class level can be override at   child class level
 
 class Vehicle { 
@@ -261,7 +260,7 @@ let bus= new Bus("123")
 console.log(bus.regNumber);
 console.log("console override property value:"+ bus.navigationEnabled)
 
-# ----------INHERITING AND OVERRIDING METHODS---------------------------//
+## INHERITING AND OVERRIDING METHODS
 <!-------------PARENT CLASS---------------------------------->
 class Vehicle{ 
     constructor(regNumber){
@@ -302,7 +301,7 @@ console.log(bus.ignition());
 <!-----overridden method - the method(with same name) which is present both in parent and child  -->
 console.log(bus.brake())
 
-# ----------INHERITING STATIC METHODS---------------------------//
+## INHERITING STATIC METHODS
 
 class Vehicle{ 
      
@@ -329,7 +328,7 @@ let bus= new Bus();
 Bus.manufacturer();
  <!-- bus.manufacturer(); give error -->
 
- # -------CODE ARRANGEMENT/FOLDER STRUCTURE (IMPORT AND EXPORT of classes)--------------//
+ ## CODE ARRANGEMENT/FOLDER STRUCTURE (IMPORT AND EXPORT of classes)
 
 <!-- The general hierarchy of files is as follows -->
 <!-- we can seperate the classes from our inheritanceSinglefile.js file and arrange them as follows  -->
