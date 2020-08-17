@@ -18,13 +18,13 @@ class Car{
     #define the class here
 }
 
- <!-- Check type of the newly created class -->
+ <!----Check type of the newly created class -->
 console.log(typeof Car);    
  <!-- ------returns function--- -->
 ```
 ### INSTANCE OF A CLASS
 Create an instance of the class with "new" key word.
-
+```
 let car1= new Car();
 <!---Check type of the newly created instance -->
 console.log(typeof car1);  
@@ -32,7 +32,7 @@ console.log(typeof car1);
 <!---Checking the newly created object is an instance of the above class -->
 console.log(car1 instanceof Car) ;
 <!---returns true ---------->
-
+```
 ## CONSTRUCTOR
 It is defined inside the class using keyword "constructor". Constructor is used to initialize information for class instance(object).It is automatically executated during instance creation. It is a function that can take information through arguments.
 
@@ -49,7 +49,7 @@ let car1= new Car("123","Honda");
 ### PROPERTIES
 Define instance properties using "this" keyword inside  costructor , this will  help to attach these variables to the instance.
 
-
+```
 class Car {
     constructor(id,name){
         console.log("Inside  constructor");
@@ -63,11 +63,11 @@ class Car {
 let car1= new Car("123","Honda")
 console.log("car1: " + car1.id, car1.name) ;
 
-
+```
 ## STATIC PROPERTY or CLASS PROPERTY
 The properties that are  defind directly under the class  called Static Property or Class property. Its not accessible to the instances but belongs only to Class 
 
-
+```
 class Car {
     constructor(id,name){
         console.log("Inside Car constructor");
@@ -90,18 +90,18 @@ class Car {
         this.id=id; 
         this.name=name;
 }
-
+```
 ### METHODS
 Methods are the functions which belongs to an instance (accessible to instace).Example
-    
+   ``` 
     drive(){
         console.log('Inside the drive method: '+ this.id + this.name)   
         }
-
+```
 
 ### STATIC METHODS
 It is defined by "static" key word (accessible to class only).
-    
+  ```  
     static driveFast(){
         console.log("Inside the driveFast method and print static property: "+ this.maxSpeed)
         console.log("Cannot access instance property in static method "+ this.id +" so will return undefined")
@@ -110,11 +110,11 @@ car1.drive();
 Car.driveFast();
 car1.driveFast();
 <!-----car1.driveFast() will return undefined ----->
-
+```
 ### GETTERS and SETTERS
 Setter- It looks like a function but can be used set value for a property variable.Uses "set" keyword to define setter function. Takes  parameters and assigns to property variable
 Getter-Function is used to return the value set by the setter function
-
+```
 class Car {
     constructor(id,name){
         console.log("Inside Car constructor");
@@ -154,10 +154,12 @@ let truck1=new Truck();
 console.log(truck1 instanceof Truck);
 console.log(truck1 instanceof Vehicle);
 console.log(truck1 instanceof  Object);
+
+```
 ### INHERITING CONSTRUCTOR
 A constructor in child class- need to execute the constructor in parent class before executing child class's constructor. It is done by calling the function "super()". Even if there is no constructor defined in parent class, javascript will add one by default so need to use super() in all the child class's constructor.
 
-
+```
 class Vehicle{ 
     constructor(){ 
         console.log('Constructor in Vehicle Class');
@@ -170,11 +172,11 @@ class Truck extends Vehicle{
         console.log("Constructor in Truck Class");
     }
 }
-
+```
 ### INHERITING PROPERTIES
 For  properties that are common for all the child classes, we can set it at parent level and can be accessed by all the child classes thar are inherited from parent class.
 
-
+```
 class Vehicle{ 
     constructor(regNumber){
         <!-- regNumber is set here at parent class -->
@@ -195,10 +197,10 @@ class Bus extends Vehicle{
 <!--regNumber is passed during instance creation -->
 let bus= new Bus("123")
 console.log(bus.regNumber);
-
+```
 ### OVERRIDING PROPERTIES
 The property values set at parent class level can be override at child class level.
-
+```
 class Vehicle { 
     constructor(regNumber){
         this.regNumber=regNumber;
@@ -218,8 +220,9 @@ class Bus extends Vehicle{
 let bus= new Bus("123")
 console.log(bus.regNumber);
 console.log("console override property value:"+ bus.navigationEnabled)
-
+```
 ### INHERITING AND OVERRIDING METHODS
+```
 <!-------------PARENT CLASS---------------------------------->
 class Vehicle{ 
     constructor(regNumber){
@@ -255,7 +258,9 @@ let bus= new Bus("123")
 console.log(bus.ignition());
 <!-----overridden method - the method(with same name) which is present both in parent and child  -->
 console.log(bus.brake())
+```
 ### INHERITING STATIC METHODS
+```
 class Vehicle{     
  <!-- static method -->
     static manufacturer(){
@@ -273,9 +278,11 @@ let bus= new Bus();
 <!-- static method defined under the parent class is accessible at child class level(not a child's instance level) -->
 Bus.manufacturer();
  <!-- bus.manufacturer(); give error -->
+ ```
  ### CODE ARRANGEMENT/FOLDER STRUCTURE (IMPORT AND EXPORT of classes)
 The general hierarchy of files is as follows -->
 we can seperate the classes from our inheritanceSinglefile.js file and arrange them as follows 
+```
 -src
     -class
         -Vehicle.js
@@ -284,6 +291,6 @@ we can seperate the classes from our inheritanceSinglefile.js file and arrange t
     -app.js
 index.html
 package.json
-
+```
 "export" keyword is used to export all the classes to app.js and "import" keyword is used to import the parent classes in other child classes as well as app.js -->
  add  type="module" in index.html where app.js is called to avoid ERROR:"module cannt be imported outside module(e.g.<script type="module" src="src/app.js"></script>)
