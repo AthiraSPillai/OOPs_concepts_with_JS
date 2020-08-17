@@ -76,6 +76,7 @@ class Car {
         this.name=name;
     }
 }
+
 let car1= new Car("123","Honda")console.log("car1: " + car1.id, car1.name) ;
 <!---------static property-------->
 Car.maxSpeed=80; 
