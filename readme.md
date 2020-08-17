@@ -33,7 +33,7 @@ console.log(typeof car1);
 console.log(car1 instanceof Car) ;
 <!---returns true ---------->
 ```
-## CONSTRUCTOR
+### CONSTRUCTOR
 It is defined inside the class using keyword "constructor". Constructor is used to initialize information for class instance(object).It is automatically executated during instance creation. It is a function that can take information through arguments.
 
 ```
@@ -64,7 +64,7 @@ let car1= new Car("123","Honda")
 console.log("car1: " + car1.id, car1.name) ;
 
 ```
-## STATIC PROPERTY or CLASS PROPERTY
+### STATIC PROPERTY or CLASS PROPERTY
 The properties that are  defind directly under the class  called Static Property or Class property. Its not accessible to the instances but belongs only to Class 
 
 ```
