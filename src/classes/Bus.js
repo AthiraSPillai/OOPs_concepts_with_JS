@@ -3,12 +3,14 @@ import {Vehicle} from './Vehicle.js'
 
 // ----------CHILD CLASS BUS-------------------------------//
 export class Bus extends Vehicle{
-    constructor(regNumber){
+    constructor(regNumber,make,loc){
         // super() is called firstthing in child class's constructor to execute the parent class's constructor , if not it will throw error
-        super(regNumber);
+        super(regNumber,make,loc);
         // override the parents class property "navigation Enabled to false" 
         this.navigationEnabled=false;
         console.log("Constructor in Bus Class");
+        this.seats=null;
+        this.year=null;
 
     }
 

@@ -1,8 +1,10 @@
 // -----------PARENT CLASS--------------------------------//
 export class Vehicle{ 
-    constructor(regNumber){
-        this.regNumber=regNumber;
-        this.navigationEnabled=true;
+    constructor(regNumber,make,loc){
+        this.regNumber = regNumber;
+        this.make = make;
+        this.loc = loc;
+        this.navigationEnabled = true;
         console.log('Constructor in Vehicle Class');
     }
     // ignition method can be accessed by all the inherited child classes

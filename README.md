@@ -295,3 +295,63 @@ package.json
 ```
 "export" keyword is used to export all the classes to app.js and "import" keyword is used to import the parent classes in other child classes as well as app.js -->
  add  type="module" in index.html where app.js is called to avoid ERROR:"module cannt be imported outside module(e.g.<script type="module" src="src/app.js"></script>)
+
+### DATA SERVICES CLASS
+create a folder called services and create a file called mobile-daa-service.js
+load the data either from backend(here I used a single file (mobile-data.js)with dummy data to make it simple)
+The common properties(eg. regNumber, make, loc) from data is set at parent class level(i.e. Vehicle class's constructor) and the remaining properties are set at individual child class level.
+
+Vehicle.js
+```
+export class Vehicle{ 
+    constructor(regNumber,make,loc){
+        this.regNumber = regNumber;
+        this.make = make;
+        this.loc = loc;
+        this.navigationEnabled = true;
+        console.log('Constructor in Vehicle Class');
+    }
+```
+The  properties(eg. regNumber, make, loc) are passed to Parent class by calling super()
+
+Bus.js
+```
+export class Bus extends Vehicle{
+    constructor(regNumber,make,loc){
+        super(regNumber,make,loc);
+        console.log("Constructor in Bus Class");
+<!-- set to null as its initial value  -->
+        this.seats=null;
+        this.year=null;
+        this.navigationEnabled=false;
+    }
+```
+Truck.js
+```
+ export class Truck extends Vehicle{
+    constructor(regNumber,make,loc){
+        super(regNumber,make,loc);
+        console.log("Constructor in Truck Class");
+<!-- set to null as its initial value  -->
+
+        this.year=null;
+        this.usage=null;
+    }
+
+}
+```
+Import the dataservice class(mobile-data-service.js) as well as data(mobile-data.js) from the corresponding file and create an instance of dataservice class and pass the data to it
+
+```
+import {mobileData} from '../mobile-data.js'
+import {MobileDataService} from '../services/mobile-data-service.js'
+
+```
+
+```
+let dataService=new MobileDataService();
+dataService.loadData(mobileData);
+// Loop through the bus array (which has different bus object)and print
+for ( let bus of dataService.bus)
+console.log(bus)
+```
